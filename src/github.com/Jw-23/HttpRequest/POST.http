@@ -1,6 +1,6 @@
-POST http://localhost:80/api/item
+POST http://localhost:8000/post?ids[a]=wnm&ids[b]=sb HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
-id=99&content=new-element
+names[1]=王尼玛是脑残&names[2]=王尼玛全家都死了
 
 ###

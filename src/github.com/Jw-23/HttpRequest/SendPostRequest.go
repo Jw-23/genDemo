@@ -11,11 +11,11 @@ import (
 func main() {
 	client := http.Client{Timeout: time.Second * 5}
 	user := "wnm"
-	message := "王尼玛"
+	//message := "王尼玛"
 	password := "sb2223"
 	//postData := fmt.Sprintf(`user=%s&password=%s&message=%s`, user, password, message)
-	var postData = fmt.Sprintf(`"user":"%s","password":"%s","message":"%s"`, user, password, message)
-	req, err := http.NewRequest("POST", "http://localhost:8000/login", strings.NewReader(postData))
+	var postData = fmt.Sprintf(`"names[a]":"%s","names[b]":"%s"`, user, password)
+	req, err := http.NewRequest("POST", "http://localhost:8000/post?ids[a]=wnm", strings.NewReader(postData))
 	if err != nil {
 		fmt.Println("create httpRequest failed,err:", err)
 		return
